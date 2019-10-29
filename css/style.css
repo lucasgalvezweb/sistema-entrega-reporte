@@ -1,0 +1,27 @@
+.tabla-sin-thead {
+    margin-bottom: 0rem;
+}
+
+.iden {
+    width: 5.5%;
+}
+
+.nom {
+    width: 34%;
+}
+
+.cat {
+    width: 17%;
+}
+
+.entr {
+    width: 19%;
+}
+
+.acc {
+    width: 20%;
+}
+
+.reportes {
+    margin-top: 16px;
+}

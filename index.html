@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- CDN JQuery -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="./app.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS Perzonalizado -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Sistema de Entregas</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Productos</a>
+        <ul class="navbar-nav ml-auto">
+            <form class="form-inline my-2 my-lg-0">
+                <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar producto" />
+                <button class="btn btn-success my-2 my-sm-0" type="submit">
+                    Buscar
+                </button>
+            </form>
+        </ul>
+    </nav>
+
+    <div class="p-3">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Ingresar nuevo Producto</h5>
+                        <form id="product-form">
+                            <input type="hidden" id="productId">
+                            <div class="form-group">
+                                <label>Producto</label>
+                                <input type="text" id="productName" placeholder="Nombre del Producto" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Categoria</label>
+                                <select class="custom-select categories" id="productCategoria">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Estado entrega</label>
+                                <select class="custom-select" id="productEstado">
+                                    <option selected>Seleccione un estado</option>
+                                    <option class="text-success" value="Entregado">Entregado</option>
+                                    <option class="text-danger" value="Por entregar">Por entregar</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block text-center">Guardar producto</button>
+                        </form>
+                        <br>
+                        <p>*Para <strong>editar</strong> un producto haga click en el nombre</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 table-responsive">
+                <h5 class="text-center py-2">LISTA DE PRODUCTOS</h5>
+                <div>
+                    <table class="table table-bordered table-sm tabla-sin-thead table-dark">
+                        <thead>
+                            <tr>
+                                <th class="text-center iden">ID</th>
+                                <th class="text-center nom">Nombre</th>
+                                <th class="text-center cat">Categoria</th>
+                                <th class="text-center entr">Estado</th>
+                                <th class="text-center acc">Accion</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="overflow-auto" style="max-height: 400px;">
+                    <table class="table table-bordered table-sm table-hover">
+                        <tbody class="products">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h3>Reporte de Seguimiento de productos</h3>
+
+        <div class="container reportes">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Por Estado</h5>
+                    <select class="custom-select reportEstado" id="productEstado">
+                    <option selected>Seleccione un estado</option>
+                    <option value="Entregado">Entregado</option>
+                    <option value="Por entregar">Por entregar</option>
+                </select>
+                </div>
+
+
+                <div class="col-md-4">
+                    <h5>Por Categoria</h5>
+                    <select class="custom-select categories" id="reportCategoria">
+                        
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card reportes">
+            <div>
+                <table class="table table-bordered table-sm tabla-sin-thead table-dark">
+                    <thead>
+                        <tr>
+                            <th class="text-center iden">ID</th>
+                            <th class="text-center nom">Nombre</th>
+                            <th class="text-center cat">Categoria</th>
+                            <th class="text-center entr">Estado</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="overflow-auto" style="max-height: 300px;">
+                <table class="table table-bordered table-sm">
+                    <tbody class="productsByCategory">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
